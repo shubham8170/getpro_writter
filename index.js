@@ -1,10 +1,7 @@
 const { Router } = require('express');
 const express = require('express');
 const app = express();
-// const port=process.env.PORT || 8080;
-const hostname='0.0.0.0';
-const port=8080;
-
+const port=process.env.PORT || 8080;
 require('./db/db')
 const postrouter = require('./router/post')
 const get_router = require('./router/get')
@@ -13,5 +10,5 @@ app.use(postrouter);
 app.use(get_router)
 
 app.listen(port, () => {
-    console.log(`app listning at port ${hostname}/${port}`);
+    console.log(`app listning at port ${port}`);
 })
